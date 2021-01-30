@@ -4,11 +4,12 @@ const mongoose = require('mongoose')
 const path = require('path')
 const err= require('./Controllers/Error')
 const authRoutes= require('./Routes/authRoutes');
+const config=require('dotenv').config();
 /**
  * TODO: add your middleware here
  */
 const app = express();
-const PORT = process.env.PORT || 3000
+const PORT = process.env.PORT || 3000;
 app.set('view engine', 'ejs');
 app.set('views', './Views')
 app.use(express.static(__dirname + '/Public/'));
@@ -24,16 +25,16 @@ app.use('/',authRoutes)
 
 // app.use(err.get500);
 
-const MONGOURL = 'mongodb://127.0.0.1:27017/test'
+const MONGOURL = process.env.DB_KEY;
 /**
  * TODO: add Your data base URL at MONGOURL=
  */
-// mongoose.connect(MONGOURL, { useNewUrlParser: true });
-// var db = mongoose.connection;
-// db.on('error', console.error.bind(console, 'connection error:'));
-// db.once('open', function () {
-//     console.log("connected");
-// });
+mongoose.connect(MONGOURL, { useNewUrlParser: true, useUnifiedTopology: true });
+var db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', function () {
+    console.log("connected");
+});
 app.listen(PORT,()=>{
     console.log(`server started at http://127.0.0.1:${PORT}`);
 })
