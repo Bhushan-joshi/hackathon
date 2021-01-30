@@ -137,11 +137,11 @@ exports.getLogin = (req, res, next) => {
 
 exports.postLogin = (req, res, next) => {
     const password = req.body.password;
-    User.findOne({ Email: req.body.email }).then(user => {
+    User.findOne({ Email: req.body.Email }).then(user => {
         if (!user) {
             return res.status(422).render('Auth/login', {
                 title: 'Agro',
-                Error: 'No Email id Found',
+                Error: 'Wrong Email or Password!',
                 olddata: {
                     email:  req.body.email,
                     password:  req.body.password,
@@ -154,12 +154,17 @@ exports.postLogin = (req, res, next) => {
                 req.session.isLoggedin = true;
                 req.session.save(err => {
                     if (err) { console.log(err); }
-                    req.flash('successlogin', 'Login Successfully!');
-                    res.redirect('/');
+                    res.redirect('/app');
                 });
             } else {
-                req.flash('loginError', 'Invalid Email or Password!');
-                res.redirect('/auth/login');
+                res.redirect('/auth/login',{
+                    title: 'Agro',
+                    Error: 'Wrong Email or Password!',
+                    olddata: {
+                        email:  req.body.email,
+                        password:  req.body.password,
+                    }
+                });
             }
         }).catch(err => {
             if (err) { console.log(err); }
