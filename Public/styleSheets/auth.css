@@ -4,6 +4,10 @@
     width: 99%;
     box-sizing: border-box;
 }
+input{
+    margin: 10px;
+    padding: 10px;
+}
 .register-left{
     text-align: center;
     color: #fff;
@@ -51,15 +55,15 @@
     margin-top: 10%;
 }
 .btnRegister{
-    float: right;
-    margin-top: 10%;
+    text-align: center;
+    margin: 30px 50px 0 60px;
     border: none;
-    border-radius: 1.5rem;
+    border-radius: 1rem;
     padding: 2%;
     background: #0062cc;
     color: #fff;
     font-weight: 600;
-    width: 50%;
+    width: 80%;
     cursor: pointer;
 }
 .register .nav-tabs{

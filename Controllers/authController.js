@@ -12,3 +12,9 @@ exports.getLogin = (req, res, next) => {
         }
     });
 };
+
+exports.buyerRegister=(req,res,next)=>{
+    const {}=req.body;
+}
+
+exports.sellerRegister=()=>{}
