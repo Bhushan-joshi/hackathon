@@ -1,0 +1,105 @@
+<%- include('../includes/head.ejs') %>
+    <link rel="stylesheet" href="/styleSheets/login.css">
+    </head>
+
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                <a class="nav-link" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="#">Orders</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="">Cart</a>
+                </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#blog">Logout</a>
+            </li>
+            </ul>
+            </div>
+        </div>
+        </nav>
+    </header>
+    <div class="login">
+        <div class="row">
+            <div class="col-md-3 login-left">
+                <img src="https://image.ibb.co/n7oTvU/logo_white.png" alt="" />
+                <h3>Welcome</h3>
+                <p>You are just one step away!</p>
+            </div>
+            <div class="col-md-9 login-right">
+                <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab"
+                            aria-controls="home" aria-selected="true">Buyer</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab"
+                            aria-controls="profile" aria-selected="false">Seller</a>
+                    </li>
+                </ul>
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                        <h3 class="login-heading">Buyer</h3>
+                        <form action="/login/buyer" method="post">
+                            <div class="row login-form">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <input type="text" name="FName" class="form-control" placeholder="First Name *"
+                                            value="" />
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" name="LName" class="form-control" placeholder="Last Name *"
+                                            value="" />
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="password" name="password" class="form-control" placeholder="Password *"
+                                            value="" />
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="password" name="conPassword" class="form-control" placeholder="Confirm Password *"
+                                            value="" />
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="email" name="Email" class="form-control" placeholder="Your Email *"
+                                            value="" />
+                                    </div>
+                                    <input type="submit" class="btnlogin" value="login" />
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="tab-pane fade show" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                        <h3 class="login-heading">Seller</h3>
+                        <form action="/login/seller" method="post">
+                            <div class="row login-form">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input type="email" class="form-control" placeholder="Email *" value="" />
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input type="password" class="form-control" placeholder="Password *"
+                                            value="" />
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="password" class="form-control" placeholder="Confirm Password *"
+                                            value="" />
+                                    </div>
+                                    <input type="submit" class="btnlogin" value="login" />
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
