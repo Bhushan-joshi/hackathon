@@ -1,39 +1,15 @@
 <%- include('../includes/head.ejs') %>
 	<link rel="stylesheet" href="/styleSheets/auth.css">
 	</head>
-
+	<%- include('../includes/navbar.ejs') %>
 	<body>
-		<header>
-			<nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
-				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon"></span>
-					</button>
-				<div class="collapse navbar-collapse" id="navbarResponsive">
-				<ul class="navbar-nav ml-auto">
-					<li class="nav-item active">
-					<a class="nav-link" href="#">Home</a>
-					</li>
-					<li class="nav-item">
-					<a class="nav-link" href="#">Orders</a>
-					</li>
-					<li class="nav-item">
-					<a class="nav-link" href="">Cart</a>
-					</li>
-				<li class="nav-item">
-					<a class="nav-link" href="#blog">Logout</a>
-				</li>
-				</ul>
-				</div>
-			</div>
-			</nav>
-		</header>
 		<div class="register">
 			<div class="row">
 				<div class="col-md-3 register-left">
 					<img src="https://image.ibb.co/n7oTvU/logo_white.png" alt="" />
 					<h3>Welcome</h3>
 					<p>You are just one step away!</p>
-					<input type="submit" href="/login" value="Login" /><br />
+					
 				</div>
 				<div class="col-md-9 register-right">
 					<ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
@@ -79,6 +55,7 @@
 										</div>
 										<input type="submit" class="btnRegister" value="Register" />
 									</div>
+									<p>Have an account ?<a href="/login">Login</a></p>
 								</div>
 							</form>
 						</div>

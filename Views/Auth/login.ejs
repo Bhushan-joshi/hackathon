@@ -1,31 +1,7 @@
 <%- include('../includes/head.ejs') %>
     <link rel="stylesheet" href="/styleSheets/login.css">
     </head>
-
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-                </button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item active">
-                <a class="nav-link" href="#">Home</a>
-                </li>
-                <li class="nav-item">
-                <a class="nav-link" href="#">Orders</a>
-                </li>
-                <li class="nav-item">
-                <a class="nav-link" href="">Cart</a>
-                </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#blog">Logout</a>
-            </li>
-            </ul>
-            </div>
-        </div>
-        </nav>
-    </header>
+    <%- include('../includes/navbar.ejs') %>
     <div class="login">
         <div class="row">
             <div class="col-md-3 login-left">
@@ -51,27 +27,16 @@
                             <div class="row login-form">
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <input type="text" name="FName" class="form-control" placeholder="First Name *"
-                                            value="" />
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="text" name="LName" class="form-control" placeholder="Last Name *"
+                                        <input type="email" name="Email" class="form-control" placeholder="Your Email *"
                                             value="" />
                                     </div>
                                     <div class="form-group">
                                         <input type="password" name="password" class="form-control" placeholder="Password *"
                                             value="" />
                                     </div>
-                                    <div class="form-group">
-                                        <input type="password" name="conPassword" class="form-control" placeholder="Confirm Password *"
-                                            value="" />
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="email" name="Email" class="form-control" placeholder="Your Email *"
-                                            value="" />
-                                    </div>
                                     <input type="submit" class="btnlogin" value="login" />
                                 </div>
+                                <p>don't have an account ?<a href="/">register</a></p>
                             </div>
                         </form>
                     </div>
@@ -103,3 +68,4 @@
         </div>
 
     </div>
+    <%- include('../includes/end.ejs') %>
