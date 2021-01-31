@@ -2,6 +2,9 @@ const User = require('../Models/User');
 const crypto = require('bcrypt');
 
 exports.getIndex = (req, res, next) => {
+    if (req.user) {
+        return res.redirect(307,'/app')
+    }
     res.render('Auth/index', {
         title: 'Agro',
         Error: null,
@@ -47,7 +50,7 @@ exports.buyerRegister = (req, res, next) => {
                     Cart: { items: [] }
                 });
                 newUser.save().then((user) => {
-                    console.log('user:', user);
+                    res.redirect('/login');
                 });
             }).catch((err) => {
                 console.log(err);
@@ -104,7 +107,6 @@ exports.sellerRegister = (req,res) => {;
                     Cart: { items: [] }
                 });
                 newUser.save().then((user) => {
-                    console.log('user:', user);
                     res.redirect('/login');
                 });
             }).catch((err) => {
@@ -120,6 +122,9 @@ exports.sellerRegister = (req,res) => {;
 }
 
 exports.getLogin = (req, res, next) => {
+    if (req.user) {
+        return res.redirect(307,'/app')
+    }
     res.render('Auth/login', {
         title: 'Agro',
         Error: null,
@@ -161,4 +166,11 @@ exports.postLogin = (req, res, next) => {
             if (err) { console.log(err); }
         });
     });
+};
+
+
+exports.postLogout=(req,res,next)=>{
+        req.session.destroy();
+        res.redirect('/login');
+        next();
 };
