@@ -25,6 +25,11 @@
                         <h3 class="login-heading">Buyer</h3>
                         <form action="/login" method="post">
                             <div class="row login-form">
+                                <% if (Error){ %>
+                                    <div class="message">
+                                        <p class="error-message"><%= Error %></p>
+                                    </div>
+                                    <% } %>
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <input type="email" name="Email" class="form-control" placeholder="Your Email *"
@@ -42,8 +47,13 @@
                     </div>
                     <div class="tab-pane fade show" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                         <h3 class="login-heading">Seller</h3>
-                        <form action="/login/seller" method="post">
+                        <form action="/login" method="post">
                             <div class="row login-form">
+                                <% if (Error){ %>
+                                    <div class="message">
+                                        <p class="error-message"><%= Error %></p>
+                                    </div>
+                                    <% } %>
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <input type="email" class="form-control" placeholder="Email *" value="" />

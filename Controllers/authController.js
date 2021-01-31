@@ -14,18 +14,11 @@ exports.getIndex = (req, res, next) => {
 
 exports.buyerRegister = (req, res, next) => {
     const { FName, LName, password, conPassword, Email } = req.body;
-    if (password === conPassword) {
+    if (password !== conPassword) {
         console.log('password missmatch');
         return res.render('Auth/index', {
             title: 'Agro',
             Error: 'password field must match',
-            olddata: {
-                email: Email,
-                password: password,
-                conpassword: conPassword,
-                FName: FName,
-                LName: LName,
-            }
         });
     }
     User.findOne({ Email: Email }).then(user => {
@@ -68,9 +61,9 @@ exports.buyerRegister = (req, res, next) => {
     });
 }
 
-exports.sellerRegister = () => {
+exports.sellerRegister = (req,res) => {;
     const { FName, LName, password, conPassword, Email } = req.body;
-    if (password === conPassword) {
+    if (password !== conPassword) {
         console.log('password missmatch');
         return res.render('Auth/index', {
             title: 'Agro',
@@ -107,10 +100,12 @@ exports.sellerRegister = () => {
                     lastName: LName,
                     Email: Email,
                     Password: hashPassword,
+                    isBuyer:false,
                     Cart: { items: [] }
                 });
                 newUser.save().then((user) => {
                     console.log('user:', user);
+                    res.redirect('/login');
                 });
             }).catch((err) => {
                 console.log(err);
@@ -128,10 +123,6 @@ exports.getLogin = (req, res, next) => {
     res.render('Auth/login', {
         title: 'Agro',
         Error: null,
-        olddata: {
-            email: '',
-            password: '',
-        }
     });
 }
 

@@ -8,7 +8,8 @@ Router.post('/register/buyer',authController.buyerRegister);
 Router.post('/register/seller',authController.sellerRegister);
 
 Router.get('/login',authController.getLogin)
-Router.post('/login',authController.postLogin)
+Router.post('/login',authController.postLogin);
+Router.post('/login/seller')
 
 
 module.exports = Router;
