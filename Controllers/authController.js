@@ -65,7 +65,7 @@ exports.buyerRegister = (req, res, next) => {
 }
 
 exports.sellerRegister = (req,res) => {;
-    const { FName, LName, password, conPassword, Email } = req.body;
+    const { FName, LName, password, conPassword, Email,aadhaar } = req.body;
     if (password !== conPassword) {
         console.log('password missmatch');
         return res.render('Auth/index', {
@@ -104,6 +104,7 @@ exports.sellerRegister = (req,res) => {;
                     Email: Email,
                     Password: hashPassword,
                     isBuyer:false,
+                    aadhaar:aadhaar,
                     Cart: { items: [] }
                 });
                 newUser.save().then((user) => {

@@ -23,6 +23,9 @@ const UserSchema = new Schema({
     type: Boolean,
     required: true,
     default: true,
+  },
+  aadhaar:{
+    type:String,
   }
 });
 
