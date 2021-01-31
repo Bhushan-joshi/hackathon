@@ -20,3 +20,7 @@ exports.addProduct = (req, res, next) => {
 		})
 	})
 }
+
+exports.getMyProducts=(req,res)=>{
+	res
+}

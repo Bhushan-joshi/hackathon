@@ -10,19 +10,9 @@
                 <p>You are just one step away!</p>
             </div>
             <div class="col-md-9 login-right">
-                <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
-                    <li class="nav-item">
-                        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab"
-                            aria-controls="home" aria-selected="true">Buyer</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab"
-                            aria-controls="profile" aria-selected="false">Seller</a>
-                    </li>
-                </ul>
                 <div class="tab-content" id="myTabContent">
                     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                        <h3 class="login-heading">Buyer</h3>
+                        <h3 class="login-heading">Login</h3>
                         <form action="/login" method="post">
                             <div class="row login-form">
                                 <% if (Error){ %>
@@ -40,30 +30,6 @@
                                             value="" />
                                     </div>
                                     <input type="submit" class="btnlogin" value="login" />
-                                </div>
-                                <p>don't have an account ?<a href="/">register</a></p>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="tab-pane fade show" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                        <h3 class="login-heading">Seller</h3>
-                        <form action="/login" method="post">
-                            <div class="row login-form">
-                                <% if (Error){ %>
-                                    <div class="message">
-                                        <p class="error-message"><%= Error %></p>
-                                    </div>
-                                    <% } %>
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <input type="email" class="form-control" placeholder="Email *" value="" />
-                                    </div>
-                                                               
-                                    <div class="form-group">
-                                        <input type="password" class="form-control" placeholder="Password *"
-                                            value="" />
-                                    </div>
-                                     <input type="submit" class="btnlogin" value="login" />                               
                                 </div>
                                 <p>don't have an account ?<a href="/">register</a></p>
                             </div>

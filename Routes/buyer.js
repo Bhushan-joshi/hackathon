@@ -5,11 +5,13 @@ const isAuth =require('../Util/isAuth');
 
 Router.get('/', isAuth,buyerController.getIndex);
 
-Router.get('/details/:id',buyerController.getDetails);
+Router.get('/details/:id',isAuth, buyerController.getDetails);
 
-Router.post('/addToCart',buyerController.addToCart);
-Router.get('/cart',buyerController.getCart);
+Router.post('/addToCart',isAuth, buyerController.addToCart);
+Router.get('/cart',isAuth, buyerController.getCart);
+Router.post('/deleteCartItem',isAuth, buyerController.deleteCartItem);
 
-Router.get('/orders',buyerController.getOrders);
+Router.get('/checkout',isAuth, buyerController.postOrder)
+Router.get('/orders',isAuth, buyerController.getOrders)
 
 module.exports = Router;

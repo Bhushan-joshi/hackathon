@@ -4,21 +4,20 @@
 
     <body>
         <%- include('../includes/navbar.ejs') %>
-        <main>
+        <main class="container">
             <% if (orders.length <= 0) { %>
                 <h1>Nothing there!</h1>
             <% } else { %>
                 <ul class="orders">
                     <% orders.forEach(order => { %>
                         <li class="orders__item">
-                            <h1>Order - # <%= order._id %>
+                            <!-- <h1>Order - # <%= order._id %>
                                 <a href="/orders/<%=order._id %>">Invoice</a>
-                            </h1>
+                            </h1> -->
                             <ul class="orders__products">
                                 <% order.products.forEach(p => { %>
                                     <h3><li class="orders__products-item"><%= p.product.Title %> (<%= p.quantity %>)</li></h3>
                                 <% }); %>
-                                <hr>
                             </ul>
                         </li>
                     <% }); %>

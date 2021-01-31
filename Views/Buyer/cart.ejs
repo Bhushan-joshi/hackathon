@@ -10,26 +10,23 @@
                 <% products.forEach(p => { %>
                 <li class="cart__item">
                     <h1><%= p.productid.Title %></h1>
-                    <h3>Quantity: <%= p.quantity %></h3>
-                    <h3>Price:<%=p.productid.Price * p.quantity%></h3>
-                    <form action="/cart-delete-item" method="POST">
-                        <input type="hidden" value="<%=p.productid._id %>" name="productId">
+                    <h4>Quantity: <%= p.quantity %></h4>
+                    <h4>Price:<%=p.productid.Price * p.quantity%></h4>
+                    <form action="/app/deleteCartItem" method="POST">
+                        <input type="hidden" value="<%=p.productid._id %>" name="_id">
                         <button class="btn danger" type="submit">Delete</button>
                     </form>
                 </li>
                 <% }) %>
             </ul>
             <hr>
-            <ul class="cart__item-list">
-                <li class="cart__item">
-                    <h1>Total Price:</h1>
-                    <h3></h3>
-                    <h3><%= total %></h3>
-                    <h3></h3>
-                </li>
-            </ul>
+            <div class="container">
+                <div class="card" style="width: 300px;margin: 20px auto;">
+                    <h3 style="text-align: center; ">Total Price: <%= total %></h3>
+                </div>
+            </div>
             <div class="centered">
-                <a href="/checkout" class="btn">Order Now !</a>
+                <a href="/app/checkout" class="btn btn-success">Order Now !</a>
             </div>
     
             <% } else { %>
