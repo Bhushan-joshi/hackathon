@@ -11,6 +11,20 @@ $(function () {
     });
 });
 
+ 
+function aadhaarno(){              
+        var regexp=/^[2-9]{1}[0-9]{3}\s{1}[0-9]{4}\s{1}[0-9]{4}$/;
+        
+        var x=document.getElementById("aadhaar").value;
+        if(regexp.test(x))
+            {
+              return true;
+                
+            }
+        else{ return false;
+          }
+}
+
 /* Seller main page lists items tasks logic begins */
 
 document.getElementById('new-product').addEventListener('submit', addNew);
