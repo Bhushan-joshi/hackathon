@@ -34,3 +34,11 @@ exports.addToCart=(req,res)=>{
         console.log(err);
     });
 }
+
+exports.getCart=(req,res)=>{
+	res.render('Buyer/cart');
+}
+
+exports.getOrders=(req,res)=>{
+	res.render('Buyer/orders');
+}

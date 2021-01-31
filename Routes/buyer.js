@@ -7,6 +7,9 @@ Router.get('/', isAuth,buyerController.getIndex);
 
 Router.get('/details/:id',buyerController.getDetails);
 
-Router.post('/addToCart',buyerController.addToCart)
+Router.post('/addToCart',buyerController.addToCart);
+Router.get('/cart',buyerController.getCart);
+
+Router.get('/orders',buyerController.getOrders);
 
 module.exports = Router;
