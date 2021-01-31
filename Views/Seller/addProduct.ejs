@@ -1,13 +1,35 @@
 <%- include('../includes/head.ejs') %>
+<link rel="stylesheet" href="/styleSheets/auth.css">
+<link rel="stylesheet" href="/styleSheets/seller_main.css">
 </head>
-
+<%- include('../includes/navbar.ejs') %>
 <body>
-	<form action="/seller/add" method="post">
-	<input type="text" name="Name" >
-	<input type="number" name="Price">
-	<input type="file" name="file">
-	<input type="text" name="desc">
-	<button type="submit">Submit</button>
+	<div class="container" >
+			<h2 style="text-align: center; color: var(--bs-primary);">Add New Product</h2>
+			<div class="col-md-12" >
+				<div class="card">
+					<div class="card card-body" style="padding: 30px 30px 30px 20px;">
+						<form action="/seller/add" method="POST" id="new-product">
+							<div class="form-group">
+								<input type="text" id="title" class="form-control" maxlength="50" autocomplete="off"
+									placeholder="Enter Product Name" required>
+							</div>
+							<div class="form-group">
+								<input type="number" id="price" class="form-control"
+									maxlength="20" autocomplete="off" placeholder="Enter Product Price" required>
+							</div>
+							<div class="form-group">
+								<textarea type="text" id="description" class="form-control"
+									maxlength="500" autocomplete="off" placeholder="Details" required></textarea>
+							</div>
+							<button style="width: 50%; margin: 0 25% ;" type="submit" class="btn btn-success btn-block">Add New</button>
+						</form>
+					</div>
+
+				</div>
+			</div>
+
+	
 </form>
 
 <%- include('../includes/end.ejs') %>

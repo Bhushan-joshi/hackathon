@@ -5,7 +5,7 @@ exports.getIndex = (req, res, next) => {
 			prods: '',
 		});
 	}else{
-		res.render('Seller/addProduct', {
+		res.render('Seller/seller_main', {
 			prods: '',
 		});
 	}

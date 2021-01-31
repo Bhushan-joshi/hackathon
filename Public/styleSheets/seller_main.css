@@ -2,6 +2,10 @@
     align-items: center;
     margin-top: 5rem;
 }
+textarea {
+    margin: 10px;
+    padding: 10px;
+}
 
 .title-head {
     color: rgb(39, 104, 2);
@@ -20,7 +24,7 @@ hr {
 }
 
 .card-body {
-    background-color: #90EE90;
+    background-color: var(--bs-blue);
 }
 
 .new-product {

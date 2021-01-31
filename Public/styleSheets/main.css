@@ -9,7 +9,13 @@
 * {
   box-sizing: border-box;
 }
-
+.a{
+  text-decoration: none;
+}
+.a:hover{
+  color: white;
+  
+}
 body {
   padding: 0;
   margin: 0;
@@ -221,11 +227,7 @@ form {
   cursor: pointer;
 }
 
-.btn:hover,
-.btn:active {
-  background-color: #00695c;
-  color: white;
-}
+
 
 .btn.danger {
   color: red;
@@ -267,3 +269,4 @@ form {
   #side-menu-toggle {
     display: none;
   }
+}
