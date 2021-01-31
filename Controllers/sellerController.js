@@ -13,14 +13,19 @@ exports.addProduct = (req, res, next) => {
 		Price: price,
 		Imageurl: imageUrl,
 		Description: desc,
+		by:req.user.firstName + " "+ req.user.lastName,
+		sellerid:req.user,
 	});
-	product.save(savedProduct=>{
+	product.save().then(savedProduct=>{
 		res.render('Seller/addProduct',{
 			Sucess:'producted added Sucessfully!',
 		})
 	})
 }
 
-exports.getMyProducts=(req,res)=>{
-	res
+exports.deleteProduct=(req,res)=>{
+	const id=req.body._id
+	Product.deleteOne({_id:id}).then(deleted=>{
+		res.redirect('/app')
+	})
 }

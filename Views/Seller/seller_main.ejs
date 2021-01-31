@@ -1,13 +1,13 @@
 <%- include('../includes/head.ejs') %>
-    <link rel="stylesheet" href="/styleSheets/auth.css">
     <link rel="stylesheet" href="/styleSheets/seller_main.css">
+    <link rel = "stylesheet" href ="/styleSheets/cart.css">
 	</head>
     <%- include('../includes/seller_navbar.ejs') %>
     
     <body>
         <div class="container">
                 <div class="col-md-12">
-                    <center><h3 style="color:rgb(39, 104, 2);">List of Products</h3></center>
+                    <center><h3 style="color:var(--bs-primary)">List of Products</h3></center>
                     <div class="row">
                         <div class="col-sm-3 text-left title-head">
                             <p class="font-weight-bold">Product Name</p>
@@ -23,8 +23,27 @@
                         </div>
                     </div>
                     <hr>
-                    <div id="tasks"></div>
-                    <button class="btn btn-primary">
+                    <div >
+                        <% if (products.length > 0) { %>
+                            <ul class="cart__item-list" style="width: 100vw;">
+                                <% products.forEach(p => { %>
+                                <li class="cart__item">
+                                    <h2><%= p.Title %></h2>
+                                    <h5>Price:<%=p.Price%></h5>
+                                    <p><%= p.Description %></p>
+                                    <form action="/seller/delete" method="POST">
+                                        <input type="hidden" value="<%=p._id %>" name="_id">
+                                        <button class="btn danger" type="submit">Delete</button>
+                                    </form>
+                                </li>
+                                <% }) %>
+                            </ul>
+                            <hr>                    
+                            <% } else { %>
+                            <h1>No Products for sell!</h1>
+                            <% } %>
+                    </div>
+                    <button class="btn btn-primary centered">
                         <a class="a" href="/seller/add">ADD NEW PRODUCT</a>
                     </button>
                 </div>
