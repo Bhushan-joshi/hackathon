@@ -1,0 +1,47 @@
+.container{
+    align-items: center;
+    margin-top: 5rem;
+}
+
+.title-head {
+    color: rgb(39, 104, 2);
+}
+
+.desc-head {
+    color: rgb(39, 104, 2);
+}
+
+.del-head {
+    color: rgb(39, 104, 2);
+}
+
+hr {
+    border-top: 1px solid rgb(61, 41, 248);
+}
+
+.card-body {
+    background-color: #90EE90;
+}
+
+.new-product {
+    color: aquamarine;
+}
+
+/* .btn{
+    display: inline-block;
+    text-decoration: none;
+    background: #87befd;
+    color: #FFF;
+    width: 50px;
+    height: 50px;
+    line-height: 120px;
+    border-radius: 50%;
+    text-align: center;
+    vertical-align: middle;
+    overflow: hidden;
+    transition: .4s;
+  }
+  
+  .btn:hover{
+      background: #668ad8;
+  } */
