@@ -3,7 +3,7 @@
 
 <body>
     <%- include('../includes/navbar.ejs') %>
-    <main class="centered" style="margin: 0 20%;">
+    <main class="centered card" style="margin: 20px 20%;">
         <h1><%= product.Title %></h1>
         <hr>
         <div class="image">
@@ -11,9 +11,9 @@
         </div>
         <h2><%= product.Price %></h2>
         <p><%= product.Description %></p>
-        <form action="/cart" method="post">
-            <input type="hidden" name="productId" value="<%= product._id %>">
-            <button class="btn" type="submit">Add to Cart</button>
+        <form action="/app/addToCart" method="post">
+            <input type="hidden" name="_id" value="<%= product._id %>">
+            <button class="btn btn-primary" type="submit">Add to Cart</button>
         </form>
     </main>
     <%- include('../includes/end.ejs') %> 
